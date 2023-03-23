@@ -5,17 +5,17 @@ This project provides a simple scraping tool for telegram channels' text and met
 ## Contents 
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [Class `ChannelParser`](#class-channel-parser)
+3. [Class `ChannelParser`](#user-content-class-channelparser)
 4. [Result](#results)
 
-## Installation {#installation}
+## Installation
 1. Install Selenium. Comprehensive installation guide can be found [here](https://selenium-python.readthedocs.io/installation.html).
 2. Install required packages using
 `pip install -r requirements.txt`
 
 You're all set!
 
-## Usage {#usage}
+## Usage
 1. Import Channel parser:  
 ```from utils.channel_parser import ChannelParser```
 
@@ -29,7 +29,7 @@ You're all set!
 `parser.save_json(path_to_save)`
 
 Usage example also can be found in the [demo]().
-## Class `ChannelParser` {#usage}
+## Class `ChannelParser`
 
 >     class ChannelParser(
 >         channel_name,
@@ -79,7 +79,7 @@ Scrapes telegram channel content according to user-given channel name, flags and
 :return: Scraped result in a form of a list
 
 
-## Result {#result}
+## Result
 Result can be presented either in a form of a list or in a form of JSON file.
 
 ---

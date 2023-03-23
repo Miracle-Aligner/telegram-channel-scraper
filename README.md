@@ -1,6 +1,6 @@
 # Telegram Channel Scraper
 
-This project provides a simple scraping tool for telegram channels' text and metadata
+This project provides a simple scraping tool for telegram channels' text and metadata.
 
 ## Contents 
 1. [Installation](#installation)

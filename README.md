@@ -5,8 +5,8 @@ This project provides a simple scraping tool for telegram channels' text and met
 ## Contents 
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [Class `ChannelParser`](#user-content-class-channelparser)
-4. [Result](#results)
+3. [Class `ChannelParser`](#class-channelparser)
+4. [Result](#result)
 
 ## Installation
 1. Install Selenium. Comprehensive installation guide can be found [here](https://selenium-python.readthedocs.io/installation.html).
@@ -28,7 +28,7 @@ You're all set!
 4. Save result:  
 `parser.save_json(path_to_save)`
 
-Usage example also can be found in the [demo]().
+Usage example also can be found in the [demo](https://github.com/Miracle-Aligner/telegram-channel-parser/blob/main/demo.py).
 ## Class `ChannelParser`
 
 >     class ChannelParser(
@@ -112,7 +112,9 @@ The data that will be scraped according to flags you provided to ChannelParser c
 `is_forwarded`: boolean flag. True if post is forwarded.  
 `forwarded_from`: link to the original post.  
 `is_edited`: boolean flag. True if post is edited.
+
 <br><br>
+
 ---
 
 ### JSON Schema

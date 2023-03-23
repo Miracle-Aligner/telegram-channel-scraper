@@ -1,0 +1,4 @@
+polyglot==16.7.4
+python_dateutil==2.8.2
+pytz==2019.3
+selenium==4.8.2

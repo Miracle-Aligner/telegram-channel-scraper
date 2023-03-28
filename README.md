@@ -47,7 +47,7 @@ Provides methods to scrape telegram channel texts + metadata, save a result in J
 Params:  
 `channel_name`: Name of telegram channel to parse  
 `start_date`: The date of the oldest massages to scrap  
-`finish_date`: The date of the newest messages to scrap. Default is None in that case scraps to the newest one.
+`finish_date`: The date of the newest messages to scrap. Default is None in that case scraps to the newest one.  
 `timezone`: Preferable timezone. The list of acceptable timezones corresponds to pytz.all_timezones  
 `get_media`: Boolean. If True, collects meta-data about photos and videos in post.  
 `get_text`: Boolean. If True, collects posts' texts.  

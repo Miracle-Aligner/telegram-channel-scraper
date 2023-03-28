@@ -1,21 +1,21 @@
 # Telegram Channel Scraper
 
-This project provides a simple scraping tool for telegram channels' text and metadata
+This project provides a simple scraping tool for telegram channels' text and metadata.
 
 ## Contents 
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [Class `ChannelParser`](#class-channel-parser)
-4. [Result](#results)
+3. [Class `ChannelParser`](#class-channelparser)
+4. [Result](#result)
 
-## Installation {#installation}
+## Installation
 1. Install Selenium. Comprehensive installation guide can be found [here](https://selenium-python.readthedocs.io/installation.html).
 2. Install required packages using
 `pip install -r requirements.txt`
 
 You're all set!
 
-## Usage {#usage}
+## Usage
 1. Import Channel parser:  
 ```from utils.channel_parser import ChannelParser```
 
@@ -28,8 +28,8 @@ You're all set!
 4. Save result:  
 `parser.save_json(path_to_save)`
 
-Usage example also can be found in the [demo]().
-## Class `ChannelParser` {#usage}
+Usage example also can be found in the [demo](https://github.com/Miracle-Aligner/telegram-channel-parser/blob/main/demo.py).
+## Class `ChannelParser`
 
 >     class ChannelParser(
 >         channel_name,
@@ -47,7 +47,7 @@ Provides methods to scrape telegram channel texts + metadata, save a result in J
 Params:  
 `channel_name`: Name of telegram channel to parse  
 `start_date`: The date of the oldest massages to scrap  
-`finish_date` The date of the newest messages to scrap default None scraps to the newest one
+`finish_date`: The date of the newest messages to scrap. Default is None in that case scraps to the newest one.
 `timezone`: Preferable timezone. The list of acceptable timezones corresponds to pytz.all_timezones  
 `get_media`: Boolean. If True, collects meta-data about photos and videos in post.  
 `get_text`: Boolean. If True, collects posts' texts.  
@@ -81,7 +81,7 @@ Scrapes telegram channel content according to user-given channel name, flags and
 :return: Scraped result in a form of a list
 
 
-## Result {#result}
+## Result
 Result can be presented either in a form of a list or in a form of JSON file.
 
 ---
@@ -114,7 +114,9 @@ The data that will be scraped according to flags you provided to ChannelParser c
 `is_forwarded`: boolean flag. True if post is forwarded.  
 `forwarded_from`: link to the original post.  
 `is_edited`: boolean flag. True if post is edited.
+
 <br><br>
+
 ---
 
 ### JSON Schema

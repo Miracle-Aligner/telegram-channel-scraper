@@ -24,9 +24,9 @@ class ChannelParser (object):
                  get_meta = True):
         """
 
-        :param channel_name: Name of telegram channel to parse
-        :param start_date: The date of the oldest messages to scrap
-        :param finish_date: The date of the newest messages to scrap default None scraps to the newest one.
+        :param channel_name: Name of telegram channel to parse.
+        :param start_date: The date of the oldest messages to scrap.
+        :param finish_date: The date of the newest messages to scrap. Default is None in that case scraps to the newest one.
         :param timezone: Preferable timezone. The list of acceptable timezones corresponds to pytz.all_timezones
         :param get_media: Boolean. If True, collects meta-data about photos and videos in post.
         :param get_text: Boolean. If True, collects posts' texts.

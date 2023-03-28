@@ -34,6 +34,7 @@ Usage example also can be found in the [demo]().
 >     class ChannelParser(
 >         channel_name,
 >         start_date,
+>         finish_date=None,
 >         timezone='Europe/Kiev',
 >         get_media=True,
 >         get_text=True,
@@ -46,6 +47,7 @@ Provides methods to scrape telegram channel texts + metadata, save a result in J
 Params:  
 `channel_name`: Name of telegram channel to parse  
 `start_date`: The date of the oldest massages to scrap  
+`finish_date` The date of the newest messages to scrap default None scraps to the newest one
 `timezone`: Preferable timezone. The list of acceptable timezones corresponds to pytz.all_timezones  
 `get_media`: Boolean. If True, collects meta-data about photos and videos in post.  
 `get_text`: Boolean. If True, collects posts' texts.  

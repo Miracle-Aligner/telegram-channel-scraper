@@ -17,6 +17,7 @@ class ChannelParser (object):
     def __init__(self,
                  channel_name,
                  start_date,
+                 finish_date = None,
                  timezone = 'Europe/Kiev',
                  get_media = True,
                  get_text = True,
@@ -24,7 +25,8 @@ class ChannelParser (object):
         """
 
         :param channel_name: Name of telegram channel to parse
-        :param start_date: The date of the oldest massages to scrap
+        :param start_date: The date of the oldest messages to scrap
+        :param finish_date: The date of the newest messages to scrap default None scraps to the newest one.
         :param timezone: Preferable timezone. The list of acceptable timezones corresponds to pytz.all_timezones
         :param get_media: Boolean. If True, collects meta-data about photos and videos in post.
         :param get_text: Boolean. If True, collects posts' texts.
@@ -36,6 +38,11 @@ class ChannelParser (object):
 
         self.start_date = parse(start_date)
         self.start_date = self.timezone.localize(self.start_date)
+        if finish_date is not None:
+            self.finish_date = parse(finish_date)
+            self.finish_date = self.timezone.localize(self.finish_date)
+        else:
+            self.finish_date = None
 
         self.get_media = get_media
         self.get_text = get_text
@@ -70,7 +77,7 @@ class ChannelParser (object):
 
     def _filter_elements(self, elements):
         """
-        Filters posts by start_date criteria.
+        Filters posts by start_date and finish_date (if specified) criteria.
 
         Elements are stored in a list in the descending date order.
         By enumerating through an elements list find the index of the last post that meets start_date criteria.
@@ -87,7 +94,18 @@ class ChannelParser (object):
                 start_msg_idx = i
                 break
 
-        return elements[start_msg_idx:]
+        if self.finish_date is None:
+            return elements[start_msg_idx:]
+        else:
+            fin_msg_idx = None
+            elements_half_filtered = elements[start_msg_idx:]
+            elements_half_filtered.reverse()
+            for i, element in enumerate(elements_half_filtered):
+                message = Post(element)
+                if self.finish_date >= message.get_date()['datetime'].astimezone(self.timezone):
+                    fin_msg_idx = i
+                    break
+            return elements_half_filtered[fin_msg_idx:]
 
     def _parse_posts(self, posts_elements):
         post_objects = []
